@@ -1,0 +1,5 @@
+export const data = [
+  { image:'https://1.bp.blogspot.com/-KnGVLo7U7gQ/Xx0E8Sh8KtI/AAAAAAAAhnE/THS8q3fq9zg3jWTQqFr2s0XuE_M4BABNQCLcBGAsYHQ/w1200-h630-p-k-no-nu/free%2BC%2BProgramming%2Bcourses%2Bfor%2Bbeginners.png', name: 'Introduction to C programming',decr:'Learn Essential Programming Fundamentals . Master programming skills to solve complex problems.' },
+  { image:'https://1.bp.blogspot.com/-KnGVLo7U7gQ/Xx0E8Sh8KtI/AAAAAAAAhnE/THS8q3fq9zg3jWTQqFr2s0XuE_M4BABNQCLcBGAsYHQ/w1200-h630-p-k-no-nu/free%2BC%2BProgramming%2Bcourses%2Bfor%2Bbeginners.png', name: 'Introduction to C programming',decr:'Learn Essential Programming Fundamentals . Master programming skills to solve complex problems.' },
+  { image:'https://1.bp.blogspot.com/-KnGVLo7U7gQ/Xx0E8Sh8KtI/AAAAAAAAhnE/THS8q3fq9zg3jWTQqFr2s0XuE_M4BABNQCLcBGAsYHQ/w1200-h630-p-k-no-nu/free%2BC%2BProgramming%2Bcourses%2Bfor%2Bbeginners.png', name: 'Introduction to C programming',decr:'Learn Essential Programming Fundamentals . Master programming skills to solve complex problems.' },
+];

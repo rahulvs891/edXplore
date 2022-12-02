@@ -1,0 +1,30 @@
+.footer{
+    background-color: black;
+    align-items: center;
+    color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+.list{
+    list-style: none;
+    line-height: 50px;
+}
+.list h3{
+    font-size: 25px;
+}
+.social{
+    font-size: 35px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    height: 28px;
+    width: auto;
+    float: left;
+    margin: 20px;
+}

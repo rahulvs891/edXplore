@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Header from './components/header';
+import Toppicks from './homepage/toppicks';
+import Footer from './components/footer';
+import {createBrowserRouter,RouterProvider,Route,} from "react-router-dom";
+function Layout() {
+  return (   
+    <>
+    <Header/>
+    <Toppicks/>
+    <Footer/>
+    </>
+  );
+}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout/>,
+    children:[
+      {
+        path:"/",
+        element:<Toppicks/>
+      },
+    ]
+  }
+]);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn react
-        </a>
-      </header>
+      <RouterProvider router={router} />
     </div>
   );
 }
