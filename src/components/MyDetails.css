@@ -1,0 +1,94 @@
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+.profile-page h1{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.mydetailsContainer {
+    font-family: 'Noto Sans', sans-serif;
+    height: 590px;
+    width:720px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #FDFDFD;
+    border: 1px solid #D8D8D8;
+}
+
+.mydetailsContainer img {
+    width: 120px;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+.mydetailsContainer form {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 500px;
+    justify-content: space-evenly;
+}
+.mydetailsContainer input {
+    float: right;
+    width: 250px;
+}
+.mydetailsContainer form label {
+    float: right;
+    margin-left: 10px;
+}
+
+.mydetailsContainer .submit {
+    width: 150px;
+    padding: 10px;
+    background-color: #227F9D;
+    border: none;
+    margin: 10px;
+    font-family: iceberg;
+    color: white;
+}
+.mydetailsContainer .submit-box {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.starred{
+    font-family: 'Noto Sans', sans-serif;
+        height: 590px;
+        width: 720px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: #FDFDFD;
+        border: 1px solid #D8D8D8;
+}
+.starred .card {
+    padding: 10px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 126px;
+    background-color: #D7FDFF;
+    margin-top: 30px;
+}
+
+.starred .card img {
+    width: 123px;
+    height: 98px;
+    margin-right: 20px;
+}
+.bookmark{
+    color: #094C4F;
+}

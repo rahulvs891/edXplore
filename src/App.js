@@ -3,15 +3,26 @@ import React from 'react';
 import Header from './components/header';
 import Toppicks from './homepage/toppicks';
 import Footer from './components/footer';
-import {createBrowserRouter,RouterProvider,Route,} from "react-router-dom";
+import Added from './components/added'
+import MyDetails from './components/MyDetails';
+import Sidenav from './components/Sidenav';
+import {createBrowserRouter,RouterProvider,Route,Outlet} from "react-router-dom";
 function Layout() {
   return (   
     <>
     <Header/>
-    <Toppicks/>
+    <Outlet/>
     <Footer/>
     </>
   );
+}
+function ProfileLayout(){
+  return(
+    <div className='information'>
+    <Sidenav/>
+    <Outlet/>
+    </div>
+  )
 }
 const router = createBrowserRouter([
   {
@@ -21,6 +32,26 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Toppicks/>
+      },
+    ]
+  },
+  {
+    path: "/personal",
+    element: <ProfileLayout/>,
+    children:[
+      {
+        path:"/personal/profile",
+        element:<MyDetails/>
+      },
+    ]
+  },
+  {
+    path: "/personal",
+    element: <ProfileLayout/>,
+    children:[
+      {
+        path:"/personal/added",
+        element:<Added/>
       },
     ]
   }

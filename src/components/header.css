@@ -26,7 +26,7 @@
     float: right;
     margin: 20px;
 }
-input {
+.header input {
     border: 1px solid black;
     height: 40px;
     width: 600px;
@@ -47,5 +47,13 @@ input {
 }
 .custom-select{
     float: right;
-    /* margin: 30px; */
+    margin: 20px;
+}
+.custom-select select{
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E4FAF7;
+    border:#D7FDFF 1px solid;
+    font-family: 'Noto Sans', sans-serif;
 }
