@@ -16,15 +16,15 @@ function Header (){
             </div>
             <a href='/personal/profile'><img src={profile} className='profile'/></a>
             </div>
-            <div className='custom-select'>
-            <select name="catagory" id="cat" >
-                  <option value="0">CATAGORIES</option>
-                  <option value="web development"><a href='#'>web development</a></option>
-                  <option value="data science"><a href='#'>data science</a></option>
-                  <option value="machine learning"><a href='#'>machine learning</a></option>
-                  <option value="data structures"><a href='#'>data structures</a></option>
-                  <option value="programming using c"><a href='#'>programming using c</a></option>
-            </select>
+            <div className="btn-group float-end m-3">
+            <button type="button" class="btn btn-lg btn-info dropdown-toggle btn-w-25 text-light" data-bs-toggle="dropdown" aria-expanded="false">Catagories</button>
+            <ul className="dropdown-menu">
+                <li><a className="dropdown-item fs-4" href="#">web development</a></li>
+                 <li><a className="dropdown-item fs-4" href="#">data science</a></li>
+                <li><a className="dropdown-item fs-4" href="#">machine learning</a></li>
+                <li><a className="dropdown-item fs-4" href="#">data structures</a></li>
+                <li><a className="dropdown-item fs-4" href="#">programming using C++</a></li>
+            </ul>
             </div>
             
         </div>

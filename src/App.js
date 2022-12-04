@@ -19,7 +19,9 @@ function Layout() {
 function ProfileLayout(){
   return(
     <div className='information'>
+      <div className='sidenav-fixed'>
     <Sidenav/>
+    </div>
     <Outlet/>
     </div>
   )
