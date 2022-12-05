@@ -1,10 +1,10 @@
 import React from 'react';
 import {data} from '../data';
+import Card from './card';
 import './MyDetails.css';
 import { BsFillBookmarkFill } from 'react-icons/bs';
 import Avatar from '../images/profile.png';
  function MyDetails() {
-     const [cards, setcards] = React.useState(data);
   return (
     <div className='profile-page'>
       <h1> My details</h1>
@@ -34,23 +34,7 @@ import Avatar from '../images/profile.png';
 </form>
     </div>
   <h1><BsFillBookmarkFill className='bookmark'/>Starred</h1>
-    <div className='starred'>
-  {
-    cards.map((card) =>{
-      const {image, name,decr} = card;
-      return(
-        <div className='card'>
-          <img src={image}/>
-          <div className='details'>
-          <h2>{name}</h2>
-          <p>{decr}</p>
-          </div>
-        </div>
-      );
-    })
-    
-  }
-  </div>
+    <Card data={data}/>
     </div>
   )
 }

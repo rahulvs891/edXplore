@@ -2,16 +2,18 @@
     background-color: black;
     align-items: center;
     color: white;
-    height: 300px;
+    height: 250px;
     display: flex;
     flex-direction: row;
     width: 100%;
     margin-top: 50px;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .list{
     list-style: none;
-    line-height: 50px;
+}
+.list li{
+    font-size: 15px;
 }
 .list h3{
     font-size: 25px;
@@ -27,4 +29,7 @@
     width: auto;
     float: left;
     margin: 20px;
+}
+.about-us{
+    height: 150px;
 }
