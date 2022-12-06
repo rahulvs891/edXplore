@@ -1,11 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../components/header.css';
 import logo from '../images/edXplore.png';
 import { FiSearch } from 'react-icons/fi';
 import profile from '../images/profile.png'
-
-function Header (){
-    
+function Header (){ 
     return(
         <div className='head'>
             <div className='header'>

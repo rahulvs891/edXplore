@@ -5,10 +5,33 @@
         width: 100%;
         gap: 30px;
             margin-left: 300px;
+            margin-bottom: 30px;
 }
 .added-main h1 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 300;
     margin-top: 20px;
 
+}
+#modalbutton{
+    position: fixed;
+    right: 30px;
+    top: 80vh;
+}
+#modalbutton .plus{
+    margin-top: -7px;
+}
+.additems{
+    display: flex;
+    gap:30px;
+    flex-direction: column;
+}
+.additems input{
+    float: right;
+    border-radius: 5px;
+    width: 300px;
+    border: 1px solid black;
+}
+.textarea{
+    height: 150px;
 }
