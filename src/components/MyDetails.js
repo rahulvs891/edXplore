@@ -13,25 +13,24 @@ import { useState } from 'react';
 function MyDetails() {
   const [resData, setresData] = useState([])
   const [data, setData] = useState([])
+
   const getBookmarkedData = async () => {
     const uid = window.localStorage.getItem('uid')
-    console.log(uid)
+  
     const res = await axios.get(BASE_URL + `/bookmark/${uid}`)
-    console.log(res.data.data)
+    // console.log(res.data.data)
     setresData(res.data.data)
   }
 
   const getBokmarkDetails = async (value) => {
     var arr = []
-    if (resData) {
+    
       for (var i = 0; i < resData.length; i++) {
         const res = await axios.get(BASE_URL + `/res/${resData[i].rid}`)
-        arr.push(res.data.data)
-
-        console.log(res.data.data)
-
+        arr.push(res.data.data[0])
+      //  console.log(res.data)
       }
-    }
+    // console.log(arr)
     setData(arr)
 
   }
@@ -42,19 +41,17 @@ function MyDetails() {
 
   useEffect(() => {
     getBokmarkDetails()
-  }, [])
+  }, [resData])
   return (
     <div className='profile-page'>
       <h1> My details</h1>
       <div className='mydetailsContainer'>
-        <div className="" onClick={() =>
-          window.location.replace('/')
-        }>Logout</div>
+       <b> user id : {window.localStorage.getItem('uid')}</b>
         <img src={Avatar} />
         <form>
           <label>
             Name
-            <input type="text" name="name" />
+            <input type="text" name="name" value={window.localStorage.getItem('name')}/>
           </label>
           <label>
             Phone Number
@@ -69,11 +66,12 @@ function MyDetails() {
             <input type="text" name="address" />
           </label>
           <div className='submit-box'>
-            <input type='submit' className='submit' value='SAVE' />
-            <input type='submit' className='submit' value='EDIT' />
+          <button  className='submit' onClick={()=>alert('you can edit again only after 10 days')} >Edit</button>
+
+          <button className="submit" onClick={() =>
+          window.location.replace('/')
+        }>Logout</button>
           </div>
-
-
         </form>
       </div>
       <h1><BsFillBookmarkFill className='bookmark' />Starred</h1>

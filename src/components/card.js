@@ -30,6 +30,12 @@ function Card({ data,type }) {
     console.log(res.data);
     alert("bookmark added")
   }
+
+  // const deleteHandler = async (value) => {
+  //   const res = await axios.delete(BASE_URL + `/res/${value}`)
+  //   console.log(res.data)
+   
+  // }
   return (
     <div className='card-container'>
       {
@@ -61,7 +67,9 @@ function Card({ data,type }) {
                 <span className='' onClick={() => addBookmark(card.rid)}>
                   <BsFillBookmarkFill />
                 </span>
-                {type ==="added" && card.uid == window.localStorage.getItem('uid') &&  <span className='' >
+                {type ==="added" && card.uid == window.localStorage.getItem('uid') &&  <span className='' 
+                // onClick={deleteHandler(card.rid)}
+                >
                   <AiFillDelete />
                 </span>
                 }
