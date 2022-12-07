@@ -1,26 +1,78 @@
 import React from 'react';
 import './card.css';
-function Card({data}) {
-  
-  const [cards, setcards] = React.useState(data);
+import { BiUpvote, BiDownvote } from 'react-icons/bi';
+import { BsFillBookmarkFill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from '../Constants';
+import {AiFillDelete} from 'react-icons/ai'
+function Card({ data,type }) {
+
+  const [vote, setVote] = useState("")
+  const navigate = useNavigate()
+  let url = "https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg"
+
+
+  const changeVOte = async (value) => {
+    console.log(value, vote)
+    if (vote === "") return
+    const res = await axios.post(BASE_URL + `/res/${value}`, {
+      vote: vote
+    })
+    console.log(res.data)
+  }
+
+  const addBookmark = (value) => {
+    const res = axios.post(BASE_URL + `/bookmark/${value}`, {
+      uid: window.localStorage.getItem('uid')
+    })
+    console.log(res.data);
+    alert("bookmark added")
+  }
   return (
     <div className='card-container'>
-  {
-    cards.map((card) =>{
-      const {image, name,decr} = card;
-      return(
-        <div className='card'>
-          <img src={image}/>
-          <div className='details'>
-          <h2>{name}</h2>
-          <p>{decr}</p>
-          </div>
-        </div>
-      );
-    })
-    
-  }
-  </div>
+      {
+        data?.map((card, key) => {
+
+          return (
+            <div className='card' key={key} >
+              <img src={url} />
+              <div className='details'>
+                <h2>{card.title}</h2>
+                <p>{card.description}</p>
+              </div>
+              <div className="">
+                <span onClick={() => {
+                  setVote("up")
+                  changeVOte(card.rid)
+                }}>
+                  <BiUpvote />
+                  {card.upvote}
+                </span>
+                <span className='' onClick={() => {
+                  setVote("down")
+                  changeVOte(card.rid)
+                }}>
+                  <BiDownvote />
+                  {card.downvote}
+                </span>
+
+                <span className='' onClick={() => addBookmark(card.rid)}>
+                  <BsFillBookmarkFill />
+                </span>
+                {type ==="added" && card.uid == window.localStorage.getItem('uid') &&  <span className='' >
+                  <AiFillDelete />
+                </span>
+                }
+              </div>
+              <div onClick={() => window.location.href = card.link}>Open</div>
+            </div>
+          );
+        })
+
+      }
+    </div>
   )
 }
 
