@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { BASE_URL } from '../Constants';
-import {AiFillDelete} from 'react-icons/ai'
-function Card({ data,type }) {
+import { AiFillDelete } from 'react-icons/ai'
+function Card({ data, type }) {
 
   const [vote, setVote] = useState("")
   const navigate = useNavigate()
@@ -34,7 +34,7 @@ function Card({ data,type }) {
   // const deleteHandler = async (value) => {
   //   const res = await axios.delete(BASE_URL + `/res/${value}`)
   //   console.log(res.data)
-   
+
   // }
   return (
     <div className='card-container'>
@@ -45,36 +45,46 @@ function Card({ data,type }) {
             <div className='card' key={key} >
               <img src={url} />
               <div className='details'>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between"
+                }} className="">
+                <h2></h2>
                 <h2>{card.title}</h2>
+                <h5>{card.uid}</h5>
+                </div>
                 <p>{card.description}</p>
-              </div>
-              <div className="">
-                <span onClick={() => {
-                  setVote("up")
-                  changeVOte(card.rid)
-                }}>
-                  <BiUpvote />
-                  {card.upvote}
-                </span>
-                <span className='' onClick={() => {
-                  setVote("down")
-                  changeVOte(card.rid)
-                }}>
-                  <BiDownvote />
-                  {card.downvote}
-                </span>
+                <div className="votes">
+                  <span onClick={() => {
+                    setVote("up")
+                    changeVOte(card.rid)
+                  }}>
+                    <BiUpvote />
+                    &nbsp;
+                    {card.upvote}
+                  </span>
+                  <span className='' onClick={() => {
+                    setVote("down")
+                    changeVOte(card.rid)
+                  }}>
+                    <BiDownvote />
+                    &nbsp;
+                    {card.downvote}
+                  </span>
 
-                <span className='' onClick={() => addBookmark(card.rid)}>
-                  <BsFillBookmarkFill />
-                </span>
-                {type ==="added" && card.uid == window.localStorage.getItem('uid') &&  <span className='' 
-                // onClick={deleteHandler(card.rid)}
-                >
-                  <AiFillDelete />
-                </span>
-                }
+                  <span className='star' onClick={() => addBookmark(card.rid)}>
+                    <BsFillBookmarkFill />
+                  </span>
+                  {type === "added" && card.uid == window.localStorage.getItem('uid') && <span className=''
+                  // onClick={deleteHandler(card.rid)}
+                  >
+                    <AiFillDelete />
+                  </span>
+                  }
+                </div>
+                <div className='button' onClick={() => window.location.href = card.link}>Open</div>
               </div>
-              <div onClick={() => window.location.href = card.link}>Open</div>
+
             </div>
           );
         })

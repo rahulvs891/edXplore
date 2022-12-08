@@ -10,10 +10,9 @@ import { useEffect } from 'react';
 
 const Added = () => {
   const [data, setData] = useState([])
-
   const AddedResource = async () => {
     const uid = window.localStorage.getItem('uid')
-    const res = await axios.get(BASE_URL + `/res/user/165860404`)
+    const res = await axios.get(BASE_URL + `/res/user/${uid}`)
     console.log(res.data.data)
     setData(res.data.data)
   }

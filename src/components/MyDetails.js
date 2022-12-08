@@ -1,5 +1,4 @@
 import React from 'react';
-import { data } from '../data';
 import Card from './card';
 import './MyDetails.css';
 import { BsFillBookmarkFill } from 'react-icons/bs';
